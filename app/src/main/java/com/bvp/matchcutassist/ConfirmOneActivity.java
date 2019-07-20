@@ -61,6 +61,7 @@ public class ConfirmOneActivity extends AppCompatActivity {
         }
     }
 
+    //detect edges on image one previously captured
     private void detectEdges(Bitmap bitmap) {
 
         Matrix matrix = new Matrix();
@@ -77,6 +78,7 @@ public class ConfirmOneActivity extends AppCompatActivity {
         imwrite(edgeImageFilePath, edges);
     }
 
+    //making background transparent removing black pixel
     private void backgroundTransparent(){
         Mat src= Imgcodecs.imread(edgeImageFilePath,1);
         Mat dst = new Mat();//(src.rows,src.cols,CV_8UC4);
@@ -103,12 +105,14 @@ public class ConfirmOneActivity extends AppCompatActivity {
         imwrite(edgeImageFilePath,dst);
     }
 
+    //onClick no - going back to camera one page
     public void captureAgain(View v){
         Intent cameraOneIntent = new Intent(getApplicationContext(), CameraOneActivity.class);
         startActivity(cameraOneIntent);
         finish();
     }
 
+    //onClick yes - going to camera two page to take another image
     public void captureSecond(View v){
         Intent cameraTwoIntent = new Intent(getApplicationContext(), CameraTwoActivity.class);
         startActivity(cameraTwoIntent);

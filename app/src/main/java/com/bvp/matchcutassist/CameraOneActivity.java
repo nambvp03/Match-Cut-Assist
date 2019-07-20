@@ -30,12 +30,15 @@ public class CameraOneActivity extends AppCompatActivity {
         takePictureButton = (ImageButton) findViewById(R.id.capture1);
         frameLayout = (FrameLayout) findViewById(R.id.camera_frame);
 
+        //open camara input
         camera = Camera.open();
 
+        //Showing camera output to FrameLayout
         showCamera = new ShowCamera(this, camera);
         frameLayout.addView(showCamera);
     }
 
+    //capturing image data and store it to a file
     Camera.PictureCallback mPictureCallback = new Camera.PictureCallback() {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
@@ -61,6 +64,7 @@ public class CameraOneActivity extends AppCompatActivity {
         }
     };
 
+    //get image one file
     public static File getOutputMediaFile() {
         String state = Environment.getExternalStorageState();
         if(!state.equals(Environment.MEDIA_MOUNTED)){
@@ -76,6 +80,7 @@ public class CameraOneActivity extends AppCompatActivity {
             return outputImageFile;
         }
     }
+
 
     public void captureImage(View v){
         if(null != camera){

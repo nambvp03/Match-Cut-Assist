@@ -49,6 +49,7 @@ public class CameraTwoActivity extends AppCompatActivity {
         }
     }
 
+    //capturing image data and store it to a file
     Camera.PictureCallback mPictureCallback = new Camera.PictureCallback() {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
@@ -74,6 +75,7 @@ public class CameraTwoActivity extends AppCompatActivity {
         }
     };
 
+    //get image two file
     public static File getOutputMediaFile() {
         String state = Environment.getExternalStorageState();
         if(!state.equals(Environment.MEDIA_MOUNTED)){

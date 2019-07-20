@@ -22,6 +22,7 @@ public class ConfirmTwoActivity extends AppCompatActivity {
         File oneImage = CameraOneActivity.getOutputMediaFile();
         File twoImage = CameraTwoActivity.getOutputMediaFile();
 
+        //Showing both the images on a page
         if(oneImage.exists() && twoImage.exists()){
             Bitmap oneBitmap = BitmapFactory.decodeFile(oneImage.getAbsolutePath());
             ImageView oneImageView = (ImageView) findViewById(R.id.image_one);
