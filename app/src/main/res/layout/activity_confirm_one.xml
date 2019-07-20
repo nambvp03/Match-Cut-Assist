@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/blueGrey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/camera_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9">
+
+        <ImageView
+            android:id="@+id/edge_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@color/black"
+            android:scaleType="centerCrop"/>
+
+    </FrameLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/mimoWhite"
+            android:onClick="captureAgain"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/no" />
+
+        <ImageButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@color/mimoWhite"
+            android:onClick="captureSecond"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/yes" />
+
+    </TableRow>
+
+</LinearLayout>
