@@ -57,7 +57,7 @@ public class ConfirmTwoActivity extends AppCompatActivity {
         shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(Intent.createChooser(shareIntent, "Share images via"));
 
-        Toast.makeText(getApplicationContext(), "Exiting application.", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Exiting application.", Toast.LENGTH_LONG).show();
         //finish();
     }
 }
